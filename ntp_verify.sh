@@ -14,6 +14,7 @@ result=$(ps ax | grep ntpd | grep -v grep > /dev/null)
 if [ $? -eq 1 ]
 
 	then
+	echo "NOTICE: ntp is not running"
         service ntp start
 	else
         echo "All is ok" > /dev/null

@@ -32,4 +32,5 @@ service ntp restart > /dev/null
 
 ntppass=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)
 touch /etc/cron.d/ntp
-echo "*/1     *       *       *       *       root    $ntppass/ntp_verify.sh" > /etc/cron.d/ntp
+echo "MAILTO=root" > /etc/cron.d/ntp
+echo "*/1     *       *       *       *       root    $ntppass/ntp_verify.sh" >> /etc/cron.d/ntp
